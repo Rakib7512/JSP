@@ -46,3 +46,8 @@
 14-Jun-2025 18:02:11.468 INFO [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [F:\JSP\JSP\apache-tomcat-10.1.42\conf\Catalina\localhost\JSPFirstClass.xml] has finished in [23] ms
 14-Jun-2025 18:02:11.471 INFO [http-nio-8080-exec-2] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/JSPFirstClass]] after start() had already been called. The second call will be ignored.
 14-Jun-2025 18:03:44.077 INFO [http-nio-8080-exec-6] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/JSPFirstClass]
+14-Jun-2025 18:52:00.337 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+14-Jun-2025 18:52:00.337 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+14-Jun-2025 18:52:00.378 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+14-Jun-2025 18:52:00.388 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+14-Jun-2025 18:52:00.390 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
