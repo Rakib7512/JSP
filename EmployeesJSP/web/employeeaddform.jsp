@@ -1,23 +1,10 @@
-<%-- 
-    Document   : employeeaddform
-    Created on : Jun 15, 2025, 2:39:35 AM
-    Author     : RJ Power
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
+<%@include file="header.jsp" %>
         <div class="container my-3">
             <div class="bg-success text-center">
                 <h1 class="jumborton">Employee Form</h1>
             </div>
             <!--    start form-->
-            <form action="addStudent.jsp"  method="post">
+            <form action="saveemployee.jsp"  method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -56,5 +43,4 @@
             <!--end form    -->
         </div>
 
-    </body>
-</html>
+<%@include file="footer.jsp" %>
