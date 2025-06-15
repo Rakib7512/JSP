@@ -1,6 +1,8 @@
 
 package dao;
 
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Employee;
 import util.DbUtil;
+import java.util.List;
+import java.util.*;
 
 public class EmployeeDao {
     static PreparedStatement ps;
@@ -25,8 +29,7 @@ public class EmployeeDao {
             ps.setFloat(3, e.getSalary());
             
             status = ps.executeUpdate();
-            ps.close();
-            rs.close();
+            ps.close();            
             DbUtil.getCon().close();
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -34,8 +37,33 @@ public class EmployeeDao {
     
     
     return status;
-    
-  
-    
     }
+    
+ public static List<Employee> getAllEmployee(){
+ List<Employee> employees = new ArrayList<>();
+ sql="select * from employee";
+        try {
+            ps=DbUtil.getCon().prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+            Employee e = new Employee(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("designation"),
+                    rs.getFloat("salary")
+            
+            );
+            employees.add(e);
+            }
+            
+            ps.close();
+            rs.close();
+            DbUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+ return employees;
+ }
+  
 }
