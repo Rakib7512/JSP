@@ -10,13 +10,13 @@ import java.util.logging.Logger;
 public class DbUtil {
   
     
-    private Connection con = null;
-    private String url="jdbc:mysql://localhost:3306/jsp";
-    private String usre="root";
-    private String password="1234";
-    private String driver="com.mysql.cj.jdbc.Driver";
+    private static Connection con = null;
+    private static String url="jdbc:mysql://localhost:3307/jsp";
+    private static String usre="root";
+    private static String password="1234";
+    private static String driver="com.mysql.cj.jdbc.Driver";
     
-    public Connection getCon(){
+    public static Connection getCon(){
     
          try {
              Class.forName(driver);
