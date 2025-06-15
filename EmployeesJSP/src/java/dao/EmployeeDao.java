@@ -25,8 +25,7 @@ public class EmployeeDao {
             ps.setFloat(3, e.getSalary());
             
             status = ps.executeUpdate();
-            ps.close();
-            rs.close();
+            ps.close();            
             DbUtil.getCon().close();
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
