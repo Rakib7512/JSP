@@ -33,8 +33,9 @@ request.setAttribute("list",list);
                 <td>${e.getSalary()}</td>
                 
                 <td>
-                    <button type="Submit" class="btn btn-primary">Edit</button>
-                    <button type="Submit" class="btn btn-warning">Delate</button>
+                    <a href="#"><button type="Submit" class="btn btn-primary">Edit</button></a>
+                    <a href="deleteemployee.jsp?id=${e.getId()}"><button type="Submit" class="btn btn-warning">Delate</button></a>
+                 
                     
                 </td>
              </tr>

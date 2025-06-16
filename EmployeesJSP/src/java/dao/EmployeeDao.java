@@ -12,6 +12,7 @@ import model.Employee;
 import util.DbUtil;
 import java.util.List;
 import java.util.*;
+import org.apache.catalina.valves.StuckThreadDetectionValve;
 
 public class EmployeeDao {
     static PreparedStatement ps;
@@ -64,6 +65,20 @@ public class EmployeeDao {
         }
  
  return employees;
+ }
+ public static void deleteEmployee(Employee e){
+ sql="delete from employee where id=?";
+        try {
+            ps=DbUtil.getCon().prepareStatement(sql);
+            ps.setInt(1, e.getId());
+            ps.executeUpdate();
+            ps.close();
+            DbUtil.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+ 
  }
   
 }
