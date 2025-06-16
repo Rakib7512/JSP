@@ -13,7 +13,7 @@ request.setAttribute("list",list);
 
 %>
 <div class="container">
-    <h1>All Employee</h1>
+    <h1 class="text-center">All Employee</h1>
     <table class="table table-striped">
         <thead>
             <tr>
