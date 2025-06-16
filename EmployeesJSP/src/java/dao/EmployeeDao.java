@@ -123,12 +123,15 @@ public class EmployeeDao {
         return e;
     }
 
-    public static List<Employee> searchEmployee(int name) {
+    public static List<Employee> searchEmployee(String kyeword) {
         List<Employee> employees = new ArrayList<>();
-        sql = "select * form employee where id = ?";
+        sql = "select * form employee where id like ? or name like ?";
         try {
-            ps = DbUtil.getCon().prepareStatement(sql);
-            ps.setInt(1, name);
+            ps=DbUtil.getCon().prepareCall(sql);
+            for(int i=1; i>=2;i++){
+                ps.setString(i,"%"+kyeword+"%");
+            
+            }
             rs = ps.executeQuery();
 
             while (rs.next()) {
