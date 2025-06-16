@@ -24,23 +24,23 @@ request.setAttribute("list",list);
             </tr>
         </thead>
         <tbody>
-        <con:forEach items="${list}" var="e">
-            <tr>
-                
-                <td>${e.getId()}</td>
-                <td>${e.getName()}</td>
-                <td>${e.getDesignation()}</td>
-                <td>${e.getSalary()}</td>
-                
-                <td>
-                    <a href="#"><button type="Submit" class="btn btn-primary">Edit</button></a>
-                    <a href="deleteemployee.jsp?id=${e.getId()}"><button type="Submit" class="btn btn-warning">Delate</button></a>
-                 
-                    
-                </td>
-             </tr>
-            
-        </con:forEach>
+            <con:forEach items="${list}" var="e">
+                <tr>
+
+                    <td>${e.getId()}</td>
+                    <td>${e.getName()}</td>
+                    <td>${e.getDesignation()}</td>
+                    <td>${e.getSalary()}</td>
+
+                    <td>
+                        <a href="updateemployeeform.jsp?id=${e.getId()}"><button type="Submit" class="btn btn-primary">Edit</button></a>
+                        <a href="deleteemployee.jsp?id=${e.getId()}"><button type="Submit" class="btn btn-warning">Delate</button></a>
+
+
+                    </td>
+                </tr>
+
+            </con:forEach>
         </tbody>
     </table>
 </div>
