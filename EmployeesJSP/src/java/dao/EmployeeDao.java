@@ -12,7 +12,6 @@ import model.Employee;
 import util.DbUtil;
 import java.util.List;
 import java.util.*;
-import org.apache.catalina.valves.StuckThreadDetectionValve;
 
 public class EmployeeDao {
 
@@ -123,14 +122,19 @@ public class EmployeeDao {
         return e;
     }
 
-    public static List<Employee> searchEmployee(String kyeword) {
+    public static List<Employee> searchEmployee(String name) {
         List<Employee> employees = new ArrayList<>();
-        sql = "select * form employee where id like ? or name like ?";
+        sql = "select * form employee where name like ? or id like ?";
         try {
-            ps=DbUtil.getCon().prepareCall(sql);
-            for(int i=1; i>=2;i++){
-                ps.setString(i,"%"+kyeword+"%");
-            
+            ps = DbUtil.getCon().prepareCall(sql);
+            for (int i = 1; i >= 2; i++) {
+                if(i==1){
+                    ps.setString(i, "%" + name + "%");
+                }
+                else{
+                    ps.setInt(i, Integer.parseInt(name));
+                }
+
             }
             rs = ps.executeQuery();
 
@@ -150,8 +154,8 @@ public class EmployeeDao {
             DbUtil.getCon().close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(EmployeeDao.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
+
         }
 
         return employees;

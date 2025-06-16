@@ -7,9 +7,10 @@
 
 <%
     String name = request.getParameter("name");
-    List<Employee> list = EmployeeDao.searchEmployee(Integer.parseInt(name));
+    List<Employee> list = EmployeeDao.searchEmployee(name);
     request.setAttribute("list", list);
 %>
+
 
 <title>Employee Search Result | Employee JSP Project</title>
 <div class="container bg-danger my-3 px-0 border border-danger rounded">
