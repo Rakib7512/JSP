@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/JSP/EmployeesJSP/src/java/model/Employee.java</file>
             <file>file:/D:/JSP/EmployeesJSP/web/index.jsp</file>
             <file>file:/D:/JSP/EmployeesJSP/web/footer.jsp</file>
@@ -17,6 +18,18 @@
             <file>file:/D:/JSP/EmployeesJSP/web/WEB-INF/web.xml</file>
             <file>file:/D:/JSP/EmployeesJSP/web/saveemployee.jsp</file>
             <file>file:/D:/JSP/EmployeesJSP/web/updateemployeeform.jsp</file>
+=======
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/error.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/saveemployee.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/src/java/util/DbUtil.java</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/employeeaddform.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/index.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/footer.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/header.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/web/success.jsp</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/src/java/dao/EmployeeDao.java</file>
+            <file>file:/F:/JSP/JSP/EmployeesJSP/src/java/model/Employee.java</file>
+>>>>>>> 9be75a3de38d19ffb1fd0648a1eff47eda763b65
         </group>
     </open-files>
 </project-private>

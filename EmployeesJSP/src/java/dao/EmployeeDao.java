@@ -1,5 +1,8 @@
 package dao;
 
+import static dao.EmployeeDao.ps;
+import static dao.EmployeeDao.rs;
+import static dao.EmployeeDao.sql;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -118,6 +121,40 @@ public class EmployeeDao {
             Logger.getLogger(EmployeeDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return e;
+    }
+
+    public static List<Employee> searchEmployee(String kyeword) {
+        List<Employee> employees = new ArrayList<>();
+        sql = "select * form employee where id like ? or name like ?";
+        try {
+            ps=DbUtil.getCon().prepareCall(sql);
+            for(int i=1; i>=2;i++){
+                ps.setString(i,"%"+kyeword+"%");
+            
+            }
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Employee employee = new Employee(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("designation"),
+                        rs.getFloat("salary")
+                );
+
+                employees.add(employee);
+            }
+
+            ps.close();
+            rs.close();
+            DbUtil.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeDao.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return employees;
     }
 
 }
