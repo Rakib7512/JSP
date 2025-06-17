@@ -127,10 +127,10 @@ public class EmployeeDao {
         List<Employee> employees = new ArrayList<>();
         sql = "select * form employee where id like ? or name like ?";
         try {
-            ps=DbUtil.getCon().prepareCall(sql);
-            for(int i=1; i>=2;i++){
-                ps.setString(i,"%"+kyeword+"%");
-            
+            ps = DbUtil.getCon().prepareCall(sql);
+            for (int i = 1; i >= 2; i++) {
+                ps.setString(i, "%" + kyeword + "%");
+
             }
             rs = ps.executeQuery();
 
