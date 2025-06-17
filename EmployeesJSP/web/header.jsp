@@ -39,7 +39,7 @@
                         </li>
                     </ul>
                     <form action="search.jsp" method="post" class="d-flex" role="search">
-                        <input name="name" id="name" class="form-control me-2"type="search" placeholder="Search" aria-label="Search"/>
+                        <input name="name" id="name" class="form-control me-2" type="text" placeholder="Search"/>
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>

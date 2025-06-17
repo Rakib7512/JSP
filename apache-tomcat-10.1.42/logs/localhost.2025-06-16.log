@@ -1,29 +1,109 @@
 16-Jun-2025 09:55:41.348 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
 16-Jun-2025 09:55:41.348 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
 16-Jun-2025 09:55:41.350 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7c369270')
-16-Jun-2025 15:12:16.041 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
-16-Jun-2025 15:12:16.041 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
-16-Jun-2025 15:12:16.046 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@68d6972f')
-16-Jun-2025 18:47:05.687 SEVERE [http-nio-8080-exec-122] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/search.jsp] at line [10]
+<<<<<<< HEAD
+16-Jun-2025 11:46:40.948 SEVERE [http-nio-8080-exec-40] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
 
-7: 
-8: <%
-9:     String name = request.getParameter("name");
-10:     List<Employee> list = EmployeeDao.searchEmployee(Integer.parseInt(name));
-11:     request.setAttribute("list", list);
+An error occurred at line: [8] in the jsp file: [/updateemployeeform.jsp]
+Type mismatch: cannot convert from Object to String
+5: 
+6: 
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
 12: %>
 13: 
 
 
 Stacktrace:] with root cause
-	java.lang.NumberFormatException: For input string: ""
-		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
-		at java.base/java.lang.Integer.parseInt(Integer.java:678)
-		at java.base/java.lang.Integer.parseInt(Integer.java:786)
-		at org.apache.jsp.search_jsp._jspService(search_jsp.java:195)
-		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:64)
-		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:436)
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [8] in the jsp file: [/updateemployeeform.jsp]
+Type mismatch: cannot convert from Object to String
+5: 
+6: 
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getAttribute("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
 		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
 		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
 		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
@@ -48,8 +128,1057 @@ Stacktrace:] with root cause
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 11:48:50.980 SEVERE [http-nio-8080-exec-47] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 11:50:59.625 SEVERE [http-nio-8080-exec-45] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 11:51:12.622 SEVERE [http-nio-8080-exec-56] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 11:52:35.905 SEVERE [http-nio-8080-exec-62] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 11:53:05.857 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Cannot make a static reference to the non-static method getEmpById(int) from the type EmployeeDao
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 11:57:07.866 SEVERE [http-nio-8080-exec-67] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 12:02:01.878 SEVERE [http-nio-8080-exec-83] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 12:04:35.187 SEVERE [http-nio-8080-exec-87] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Duplicate local variable e
+7: <%
+8: String id=request.getParameter("id");
+9: 
+10: Employee e=EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 12:09:52.826 SEVERE [http-nio-8080-exec-106] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id = request.getParameter("id");
+9: 
+10: Employee e = EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/updateemployeeform.jsp]
+Employee cannot be resolved to a type
+7: <%
+8: String id = request.getParameter("id");
+9: 
+10: Employee e = EmployeeDao.getEmpById(Integer.parseInt(id));
+11: 
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 12:39:56.624 SEVERE [http-nio-8080-exec-104] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [6] in the jsp file: [/updateemployee.jsp]
+Cannot make a static reference to the non-static method updateEmployee(Employee) from the type EmployeeDao
+3: <jsp:setProperty name="e" property="*" />
+4: 
+5: <%
+6: EmployeeDao.updateEmployee(e);
+7: 
+8:     response.sendRedirect("updatepage.jsp");
+9:      
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [6] in the jsp file: [/updateemployee.jsp]
+Cannot make a static reference to the non-static method updateEmployee(Employee) from the type EmployeeDao
+3: <jsp:setProperty name="e" property="*" />
+4: 
+5: <%
+6: EmployeeDao.updateEmployee(e);
+7: 
+8:     response.sendRedirect("updatepage.jsp");
+9:      
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 12:40:34.775 SEVERE [http-nio-8080-exec-100] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [6] in the jsp file: [/updateemployee.jsp]
+Cannot make a static reference to the non-static method updateEmployee(Employee) from the type EmployeeDao
+3: <jsp:setProperty name="e" property="*" />
+4: 
+5: <%
+6: EmployeeDao.updateEmployee(e);
+7: 
+8:     response.sendRedirect("success.jsp");
+9:       
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [6] in the jsp file: [/updateemployee.jsp]
+Cannot make a static reference to the non-static method updateEmployee(Employee) from the type EmployeeDao
+3: <jsp:setProperty name="e" property="*" />
+4: 
+5: <%
+6: EmployeeDao.updateEmployee(e);
+7: 
+8:     response.sendRedirect("success.jsp");
+9:       
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 14:17:30.975 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+16-Jun-2025 14:17:30.975 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+=======
+16-Jun-2025 15:12:16.041 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Jun-2025 15:12:16.041 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Jun-2025 15:12:16.046 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@68d6972f')
+<<<<<<< HEAD
+16-Jun-2025 18:47:05.687 SEVERE [http-nio-8080-exec-122] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [An exception occurred processing [/search.jsp] at line [10]
+
+=======
+>>>>>>> 9be75a3de38d19ffb1fd0648a1eff47eda763b65
+16-Jun-2025 14:40:55.652 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Jun-2025 14:40:55.653 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Jun-2025 14:40:55.656 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6e16b8b5')
+16-Jun-2025 14:45:04.808 SEVERE [http-nio-8080-exec-18] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/search.jsp]
+The method searchEmployee(int) is undefined for the type EmployeeDao
+>>>>>>> b8373850c2d1131fddfce1d2980d05cfb6f0b45e
+7: 
+8: <%
+9:     String name = request.getParameter("name");
+10:     List<Employee> list = EmployeeDao.searchEmployee(Integer.parseInt(name));
+11:     request.setAttribute("list", list);
+12: %>
+13: 
+
+
+Stacktrace:] with root cause
+<<<<<<< HEAD
+	java.lang.NumberFormatException: For input string: ""
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:678)
+		at java.base/java.lang.Integer.parseInt(Integer.java:786)
+		at org.apache.jsp.search_jsp._jspService(search_jsp.java:195)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:64)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:436)
+=======
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [10] in the jsp file: [/search.jsp]
+The method searchEmployee(int) is undefined for the type EmployeeDao
+7: 
+8: <%
+9:     String name = request.getParameter("name");
+10:     List<Employee> list = EmployeeDao.searchEmployee(Integer.parseInt(name));
+11:     request.setAttribute("list", list);
+12: %>
+13: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376)
+>>>>>>> b8373850c2d1131fddfce1d2980d05cfb6f0b45e
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:666)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+<<<<<<< HEAD
 		at java.base/java.lang.Thread.run(Thread.java:842)
 16-Jun-2025 18:59:22.132 SEVERE [http-nio-8080-exec-132] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+=======
+		at java.base/java.lang.Thread.run(Thread.java:833)
+16-Jun-2025 23:10:33.283 SEVERE [http-nio-8080-exec-17] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+>>>>>>> b8373850c2d1131fddfce1d2980d05cfb6f0b45e
 
 An error occurred at line: [10] in the jsp file: [/search.jsp]
 The method searchEmployee(String) in the type EmployeeDao is not applicable for the arguments (int)
@@ -109,6 +1238,10 @@ Stacktrace:
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+<<<<<<< HEAD
 		at java.base/java.lang.Thread.run(Thread.java:842)
 16-Jun-2025 19:02:50.808 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
 16-Jun-2025 19:02:50.808 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+=======
+		at java.base/java.lang.Thread.run(Thread.java:833)
+>>>>>>> b8373850c2d1131fddfce1d2980d05cfb6f0b45e
