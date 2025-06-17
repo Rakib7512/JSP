@@ -122,23 +122,13 @@ public class EmployeeDao {
         return e;
     }
 
-    public static List<Employee> searchEmployee(String name) {
+    public static List<Employee> searchEmployee(String keyword) {
         List<Employee> employees = new ArrayList<>();
-        sql = "select * form employee where name like ? or id like ?";
+        sql = "select * from employee where id like ? or name like ?";
         try {
             ps = DbUtil.getCon().prepareCall(sql);
-            for (int i = 1; i >= 2; i++) {
-<<<<<<< HEAD
-                ps.setString(i, "%" + kyeword + "%");
-=======
-                if(i==1){
-                    ps.setString(i, "%" + name + "%");
-                }
-                else{
-                    ps.setInt(i, Integer.parseInt(name));
-                }
->>>>>>> b8373850c2d1131fddfce1d2980d05cfb6f0b45e
-
+            for (int i = 1; i <= 2; i++) {
+                ps.setString(i, "%" + keyword + "%");
             }
             rs = ps.executeQuery();
 

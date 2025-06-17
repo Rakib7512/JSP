@@ -6,9 +6,10 @@
 <%@include file="header.jsp" %>
 
 <%
-    String name = request.getParameter("name");
-    List<Employee> list = EmployeeDao.searchEmployee(name);
+    String keyword = request.getParameter("keyword");
+    List<Employee> list = EmployeeDao.searchEmployee(keyword);
     request.setAttribute("list", list);
+ 
 %>
 
 
@@ -33,7 +34,7 @@
                     <td class="text-center">${e.getDesignation()}</td>
                     <td class="text-center">${e.getSalary()}</td>
                     <td class="text-center">
-                        <a href="editemployee.jsp?id=${e.getId()}"><button class="btn btn-success btn-sm mx-1">Edit</button></a>
+                        <a href="updateemployeeform.jsp?id=${e.getId()}"><button class="btn btn-success btn-sm mx-1">Edit</button></a>
                         <a href="deleteemployee.jsp?id=${e.getId()}"><button class="btn btn-danger btn-sm mx-1" onclick="return confirm('Are you really want to delete ${e.getName()} details?')">Delete</button></a>
                     </td>
                 </tr>

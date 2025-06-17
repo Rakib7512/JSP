@@ -38,8 +38,8 @@
                             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                    <form action="search.jsp" method="post" class="d-flex" role="search">
-                        <input name="name" id="name" class="form-control me-2" type="text" placeholder="Search"/>
+                    <form action="search.jsp" method="get" class="d-flex" role="search">
+                        <input name="keyword" id="keyword" class="form-control me-2" type="text" placeholder="Search"/>
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
